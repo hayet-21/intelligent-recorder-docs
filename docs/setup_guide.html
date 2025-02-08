@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide: Intelligent Video Recorder System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #078930;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step {
+            margin-bottom: 30px;
+        }
+        .step h2 {
+            margin-bottom: 10px;
+        }
+        .step p {
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #e7f3fe;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Setup Guide: Intelligent Video Recorder System</h1>
+    <p>This guide will walk you through the steps to set up and run the <strong>Intelligent Video Recorder System</strong> application. By the end of this guide, you will have the application running on your local machine.</p>
+    <p><strong>Note:
+
+    </strong> This application requires significant computational resources due to real-time video processing and object detection. To ensure smooth performance and avoid system crashes, please make sure your machine meets the following requirements:</p>
+     <ul>
+        <li>A modern multi-core CPU (Intel i5 or higher, or equivalent).</li>
+        <li>RAM 16GB is recommended.</li>
+        <li>A dedicated GPU (e.g., NVIDIA GTX 1060 or higher) for faster processing, especially for object detection tasks.</li> 
+    </ul> 
+        <p>Running this application on underpowered hardware may result in slow performance or system instability.</p>
+    <div class="step">
+        <h2>Step 1: Install Python</h2>
+        <p>If you don't already have Python installed, download and install it from the official website:</p>
+        <ul>
+            <li>Go to <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>.</li>
+            <li>Download the latest version of Python (3.8 or higher is recommended).</li>
+            <li>Run the installer and make sure to check the box that says <strong>Add Python to PATH</strong> during installation.</li>
+        </ul>
+        <p>To verify the installation, open a terminal or command prompt and run:</p>
+        <pre><code>python --version</code></pre>
+        <p>You should see the installed Python version.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Create a Virtual Environment</h2>
+        <p>A virtual environment is a self-contained directory that contains a Python installation and all the dependencies for your project. This avoids conflicts with other Python projects.</p>
+        <p>To create a virtual environment:</p>
+        <pre><code>python -m venv video_recorder_env</code></pre>
+        <p>Activate the virtual environment:</p>
+        <ul>
+            <li><strong>On Windows:</strong></li>
+            <pre><code>video_recorder_env\Scripts\activate</code></pre>
+            <li><strong>On macOS/Linux:</strong></li>
+            <pre><code>source video_recorder_env/bin/activate</code></pre>
+        </ul>
+        <p>You should see the virtual environment name in your terminal prompt, e.g., <code>(video_recorder_env)</code>.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Install Requirements</h2>
+        <p>The application requires several Python packages to run. These are listed in a <code>requirements.txt</code> file.</p>
+        <p>Download the <code>requirements.txt</code> file from the project repository</p>
+        <p>Install the requirements by running:</p>
+        <pre><code>pip install -r requirements.txt</code></pre>
+        <p>This will install all the necessary dependencies.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Download the Application Code</h2>
+        <p>Download the application code from the repository or copy the Python script (<code>main.py</code>) to your project directory.</p>
+        <p>Your project directory should look like this:</p>
+        <pre><code>my_project/
+├── main.py
+├── requirements.txt
+└── video_recorder_env/</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>Step 5: Run the Streamlit Application</h2>
+        <p>Once everything is set up, you can run the application using Streamlit.</p>
+        <p>In your terminal or command prompt, navigate to the project directory and run:</p>
+        <pre><code>streamlit run main.py</code></pre>
+        <p>This will start the Streamlit server and open the application in your default web browser.</p>
+        <p>You should see the application interface with options to choose between <strong>upload</strong> and <strong>camera</strong> modes.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 6: Using the Application</h2>
+        <p>Follow these steps to use the application:</p>
+        <ol>
+            <li><strong>Choose Recording Method:</strong> Select either <strong>upload</strong> or <strong>camera</strong> mode.</li>
+            <li><strong>For Camera Mode:</strong> Enter the IP camera address or use <code>0</code> for the default webcam. Click <strong>Start Streaming</strong> to begin.</li>
+            <li><strong>For Upload Mode:</strong> Upload a video file (mp4 or avi). Adjust the confidence and IoU thresholds as needed.</li>
+            <li><strong>Stop Recording:</strong> Click the <strong>Stop Recording</strong> button to end the recording.</li>
+        </ol>
+        <p>The recorded videos will be saved in the <code>recordings</code> directory.</p>
+    </div>
+
+    <div class="note">
+        <h3>Note:</h3>
+        <p>If you encounter any issues, make sure:</p>
+        <ul>
+            <li>Your virtual environment is activated.</li>
+            <li>All dependencies are installed correctly.</li>
+            <li>You have the correct permissions to access the camera or video file.</li>
+        </ul>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Congratulations! You have successfully set up and run the <strong>Intelligent Video Recorder System</strong> application. You can now use it to detect motion, record videos, and analyze objects in real-time.</p>
+</body>
+</html>
